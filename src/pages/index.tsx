@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default function index({ products }: HomeProps) {
-  const [sliderRef] = useKeenSlider({
+  const [sliderRef] = useKeenSlider<HTMLDivElement>({
     slides: {
       perView: 3,
       spacing: 48,
