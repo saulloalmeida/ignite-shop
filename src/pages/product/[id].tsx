@@ -17,26 +17,12 @@ interface ProductProps {
     description: string;
   };
 }
-export default function product({ product }: ProductProps) {
-  return (
-    <ProductContainer>
-      <ImageContainer>
-        <Image src={product.imageUrl} width={520} height={480} alt="" />
-      </ImageContainer>
-      <ProductDetails>
-        <h1>{product.name}</h1>
-        <span>{product.price}</span>
-        <p>{product.description} </p>
-        <button>Comprar agora</button>
-      </ProductDetails>
-    </ProductContainer>
-  );
-}
+
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [{ params: { id: "prod_MWia14Cj5P8lcW" } }],
-    fallback: false,
+    fallback: "blocking",
   };
 };
 
@@ -66,3 +52,20 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
     revalidate: 60 * 60 * 1, // 1 hour
   };
 };
+
+export default function product({ product }: ProductProps) {
+  return (
+    <ProductContainer>
+      <ImageContainer>
+        <Image src={product.imageUrl} width={520} height={480} alt=""/>
+      </ImageContainer>
+      <ProductDetails>
+        <h1>{product.name}</h1>
+        <span>{product.price}</span>
+        <p>{product.description} </p>
+        <button>Comprar agora</button>
+      </ProductDetails>
+    </ProductContainer>
+  );
+}
+
