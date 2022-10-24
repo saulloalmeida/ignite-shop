@@ -15,6 +15,7 @@ interface ProductProps {
     imageUrl: string;
     price: number;
     description: string;
+    defaultPriceId: string
   };
 }
 
@@ -25,6 +26,25 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: "blocking",
   };
 };
+
+export default function product({ product }: ProductProps) {
+  function handleSubmit(){
+    console.log(product.defaultPriceId)
+  }
+  return (
+    <ProductContainer>
+      <ImageContainer>
+        <Image src={product.imageUrl} width={520} height={480} alt=""/>
+      </ImageContainer>
+      <ProductDetails>
+        <h1>{product.name}</h1>
+        <span>{product.price}</span>
+        <p>{product.description} </p>
+        <button onClick={handleSubmit}>Comprar agora</button>
+      </ProductDetails>
+    </ProductContainer>
+  );
+}
 
 export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
   params,
@@ -47,25 +67,9 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
           currency: "BRL",
         }).format((price.unit_amount || 0) / 100),
         description: product.description,
+        defaultPriceId: price.id
       },
     },
     revalidate: 60 * 60 * 1, // 1 hour
   };
 };
-
-export default function product({ product }: ProductProps) {
-  return (
-    <ProductContainer>
-      <ImageContainer>
-        <Image src={product.imageUrl} width={520} height={480} alt=""/>
-      </ImageContainer>
-      <ProductDetails>
-        <h1>{product.name}</h1>
-        <span>{product.price}</span>
-        <p>{product.description} </p>
-        <button>Comprar agora</button>
-      </ProductDetails>
-    </ProductContainer>
-  );
-}
-
