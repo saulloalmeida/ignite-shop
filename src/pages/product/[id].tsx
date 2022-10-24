@@ -1,3 +1,4 @@
+import axios from "axios";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Image from "next/future/image";
 import Stripe from "stripe";
@@ -28,8 +29,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export default function product({ product }: ProductProps) {
-  function handleSubmit(){
-    console.log(product.defaultPriceId)
+  async function handleBuyProduct(){
+    try{
+      const response = await axios.post('/api/checkout',{
+        priceId: product.defaultPriceId
+      })
+      
+      const { checkoutUrl } = response.data
+      window.location.href = checkoutUrl
+    }catch(e){
+      alert('Falha ao redirecionar o checkout')
+    }
   }
   return (
     <ProductContainer>
@@ -40,7 +50,7 @@ export default function product({ product }: ProductProps) {
         <h1>{product.name}</h1>
         <span>{product.price}</span>
         <p>{product.description} </p>
-        <button onClick={handleSubmit}>Comprar agora</button>
+        <button onClick={handleBuyProduct}>Comprar agora</button>
       </ProductDetails>
     </ProductContainer>
   );
