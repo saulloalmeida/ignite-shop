@@ -5,9 +5,9 @@ import { stripe } from '../../lib/stripe'
 export default async function handler(req: NextApiRequest, res: NextApiResponse){
   const {priceId}= req.body
 
-  if(req.method !== 'POST'){
-    return res.status(405).json({message:'Method not allowed.'})
-  }
+  // if(req.method !== 'POST'){
+  //   return res.status(405).json({message:'Method not allowed.'})
+  // }
 
   if(!priceId){
     return res.status(400).json({message:'Price not found.'})
