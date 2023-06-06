@@ -1,14 +1,17 @@
-<div align="center">
-  <img alt="Player de música" src="./src/assets/screen.png">
-</div><br>
-
-# Desafio#01 - Player de música
-Elaboração do desafio 01, que é o desenvolvimento de uma layout de player de música estático.
+<h1 align="center">Projeto - IgniteShop</h1>
 <br>
+<p align="center">
+  <img alt="screen" src="./readme.png" width="80%">
+</p>
+> trata-se de projeto efetuado para simular compra, desde a lista de produtos, detalhes de produtos, integração com stripe e finalização da compra.
+
+### 🏠 [Homepage](https://ignite-shop-three-kappa.vercel.app/)
+
+### ✨ [Demo](https://ignite-shop-three-kappa.vercel.app/)
 
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<!--   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; -->
   <a href="#-instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-licença">Licença</a>
 </p>
@@ -17,26 +20,26 @@ Elaboração do desafio 01, que é o desenvolvimento de uma layout de player de 
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
 </p><br>
 
-<p align="center">
-  <img alt="Player de música" src="./src/assets/github_capa.png" width="80%">
-</p>
 
-## 🏆 Aprendizados
+
+<!-- ## 🏆 Aprendizados
   ### Vite
-  Utilização do VITE em um projeto vanilla JS. O vite utiliza o ES6 module para realizar os seus imports e exports
+   -->
 
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
-
+- Nextjs
+- TypeScript
+- Styled Components
+- Stripe
 - HTML e CSS
 - [Node e NPM](https://nodejs.org/)
-- [Vite](https://vitejs.dev/)
 
-
+<!-- 
 ## 🎨 Layout
 
-  - [Layout do projeto](https://www.figma.com/community/file/1195050524500542670)
+  - [Layout do projeto](https://www.figma.com/community/file/1195050524500542670) -->
 
 ## 💿 Instalação
 
@@ -46,3 +49,14 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 |                    `npm i` | Instala as dependências do projeto      |
 |                    `npm run dev` | Roda o projeto no ambiente de desenvolvimento         |
 
+
+## Autor
+
+👤 **Saullo Almeida**
+
+* Github: [@saulloalmeida](https://github.com/saulloalmeida)
+* LinkedIn: [@saullo-almeida](https://linkedin.com/in/saullo-almeida)
+* Twitter: [@saulloalmeida](https://twitter.com/saulloalmeida)
+<!-- ##  -->
+
+Dê uma ⭐️
